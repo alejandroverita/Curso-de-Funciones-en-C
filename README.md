@@ -309,3 +309,100 @@ Un ejemplo de esto:
 
 [========]
 
+
+## TIME.H
+
+    #include <stdio.h>
+    #include <time.h>
+    
+    time_t seconds;
+    
+    int main()
+    {
+    
+        seconds = time( NULL);
+        printf("El numero de horas desde EPOCH 1ro de Enero de 1970 a las 00:00 es:%ld \n", seconds/3600);
+        return 0;
+    }
+
+Segundo codigo de la clase
+
+    #include <stdio.h>
+    #include <time.h>
+    
+    time_t begin, end;
+    
+    int main()
+    {
+        long i;
+        begin = time(NULL);
+        for (i = 0; i < 600000000; i++);
+        end = time(NULL); //para averiguar el tiempo en cumplir alguna finalidad
+        printf("El tiempo que duro nuestro for es: %f \n", difftime(end, begin));
+        return 0;
+    }
+
+
+[TIME.H](https://www.tutorialspoint.com/c_standard_library/time_h.htm "TIME.H")
+
+<br>
+
+[========]
+
+
+##  STDLIB.H
+
+    // 1er paso Dividir el valor entre 2 y almacenar el resto, mod, en un array
+    // 2do paso dividir otra vez entre 2 y almacenar el restante
+    // Repetir hasta que nuestro número ya no se pueda dividir
+    
+    #include <stdio.h>
+    #include <stdlib.h>
+    
+    int binaryNumber[12], n, i;
+    
+    main()
+    {
+        //system("cls");
+        //system("color 9F");
+        printf("Ingrese un valor decimal\n");
+        scanf("%d", &n);
+        printf("Usted va a convertir número %d a binario\n", n);
+    
+    
+        
+        while (n > 0)
+        {
+            binaryNumber[i] = n % 2;
+            n = n / 2;
+            i++;
+        }
+        i = i - 1;
+    
+        printf("La conversión de la conversión es: ");
+    
+        while (i >= 0)
+        {
+            printf("%d", binaryNumber[i]);
+            i--;
+        }
+    
+        return 0;
+    }
+    
+
+
+
+[Stdlib.h](https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm "Stdlib.h")
+
+
+<br>
+
+[========]
+
+
+## CONCLUSIONES
+
+Siguiente paso: Estructura de datos
+
+
